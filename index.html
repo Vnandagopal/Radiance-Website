@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rozha+One&display=swap" rel="stylesheet">
+<title>Responsive Web Design</title>
+<style>
+   
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "cormorant,raleway";
+    line-height: 1.6;
+  }
+
+  .navbar {
+    height: 60px;
+    width: 1440px;
+    background-color: #ffffff;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    position: relative;
+    align-items: center;
+    width: calc(100% - 100px);
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 10;
+
+  }
+
+  .navbar h1{
+    font-family: "Rozha One";
+    font-size:26px;
+    font-weight: bold;
+    margin-right: 50px;
+
+    
+  }
+
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    
+    
+  }
+
+  .navbar a:hover {
+    text-decoration: underline;
+    color: #f26a47;
+  }
+
+  .menu-toggle {
+    display: none;
+    
+    
+
+   
+  }
+
+  .nav-links {
+  
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  
+}
+
+  
+  .nav-links #closemenu{
+    display: block;
+    margin: 0;
+  
+  }
+    
+  
+  
+  .nav-links li a {
+    padding: 0.5rem;
+    font-family: "Raleway";
+    font-size: 16px;
+    transition: 0.2s ease-out;
+    display: block;
+   
+    
+    
+
+  }
+  nav-links.active{
+    display: flex;
+  }
+  
+  
+  
+  
+
+  
+
+  
+  .main-header {
+    position: relative;
+   
+    background: no-repeat center center/cover;
+    height: 610px;
+  }
+
+  /* Placeholder for your image */
+  .main-header::after {
+    content: '';
+    background: url("Image\ +\ Overlay.png") no-repeat center center/cover;
+	background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+	text-align: center;
+  }
+
+  .main-header .header-content {
+    text-align: center;
+    padding-top: 10%;
+    
+  }
+
+  .main-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+   
+  }
+  
+  .main-header p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: "Raleway", sans-serif;
+    color: #b8b8b8;
+    font-size: 18px;
+  }
+
+  .main-header button {
+    font-size: 1rem;
+    font-family: "Raleway", sans-serif;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+  }
+  .header-content h1{
+    font-family: "cormorant";
+    color: white;
+    font-weight: bold;
+    font-size: 44px;
+
+  }
+  
+  #openModal {
+    height: 44px;
+    width: 150px;
+    background-color: #f26a47; /* Example pastel orange, replace with your color */
+    color: white; /* Button text color, replace with your choice */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 100px;
+    font-family: "Raleway", sans-serif; /* Replace 'YourFontFamily' with your font */
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+#openModal:hover{
+  color: white;
+  background-color:#fa542b
+}
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+
+/* Modal Content */
+.modal-content h2{
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  
+}
+.modal-content {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align children to the start of the cross axis */
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto; /* Adjust margins as needed */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Adjust width as per your requirement */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 9999;
+}
+
+
+/* The Close Button */
+.modal-close-button {
+  margin-left: auto;
+
+  background-color: #f26a47; /* White background */
+    color: white; /* Dark text */
+    padding: 10px 20px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 100px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: white;
+    background-color: #fa542b;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-content p {
+    color: black; 
+    text-align: left;
+    font-family: "Raleway";
+    font-size: 15px;
+    margin-top: 10px;
+}
+  
+
+
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+    
+
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    font-size: 15px;
+
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.footer-section{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+        
+}
+.footer-title {
+  font-family: "Rozha One";
+  font-size: 40px;
+  font-weight: bold;
+
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-family: "Raleway";
+    font-size: 13;
+    font-weight: bold;
+
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+    justify-content: space-evenly;
+    
+}
+
+
+.footer-section ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: "Raleway";
+    font-size: 13;
+    padding-top: 10px;
+    
+}
+
+.footer-section ul li a:hover {
+    color:#f26a47;
+}
+
+.footer-bottom {
+    border-top: 1px solid #ddd,;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    
+}
+
+.footer-bottom ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-bottom ul li {
+    padding: 0 10px;
+    font-family: "Raleway";
+    font-size: 12px;
+    font-weight: bold;
+    
+}
+
+
+.footer-bottom ul li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: "Raleway";
+    font-size: 12px;
+    
+}
+
+.footer-bottom ul li a:hover {
+  color:#f26a47;
+}
+
+.social-icons {
+    display:flex;
+    margin-right: 50px;
+    justify-content: space-evenly;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust navbar for mobile */
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px; /* Adjust as necessary */
+    top: 20px; 
+    z-index: 2;
+  }
+
+.menu-toggle.is-active {
+  display: flex /* Hide the toggle button when menu is active */
+}
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: auto;
+    align-items: flex-end; /* Align items to the right */
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar height */
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.95); border-radius: 5px; /* Optional: round corners */
+    z-index: 1; /* Ensure menu is above other content but below the toggle */
+    box-sizing: border-box;
+    margin-right: 0;
+    padding: 0;
+    
+   
+    margin: 0;
+    padding: 0;
+  
+  }
+  .nav-links.active #closemenu {
+    display: block; /* Ensure the button is visible */
+    text-align: right;
+    width: 100%;
+    margin: 10px; /* Add some margin around the button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #f26a47; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: rounded corners */
+    cursor: pointer; /* Cursor to pointer */
+  }
+
+  
+
+  .nav-links.active {
+    display: flex
+   
+
+  }
+
+  .nav-links li {
+    list-style-type: none;
+    text-align: right;
+    width: 100%;
+  }
+  .nav-links li a, .nav-links li button {
+    padding: 10px; /* Adjust padding as needed */
+    display: block; /* Ensure links and buttons are block level for full width */
+  }
+ 
+
+  /* Adjust main header content for mobile */
+  .main-header .header-content {
+    padding: 20% 1rem 0;
+    text-align: center;
+  }
+
+  /* Adjust footer layout for mobile */
+  .footer{
+    height: 200px;
+    overflow-y: auto;/* to scroll */
+    padding: 10px;
+  }
+  .footer-content,
+  .footer-bottom
+  .footer-section {
+    display: block;
+    text-align: center;
+    padding: 5px;
+    font-size: smaller;
+  }
+
+  .footer-section{
+    margin-bottom: 10px;
+  }
+  .social-icons, .footer-bottom ul {
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+ }
+ .social-icons img,
+  .footer-bottom ul li {
+    display: inline-block; /* Display icons and list items inline */
+    margin: 0 5px; /* Add margin for spacing */
+  }
+
+ 
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <h1>morning</h1>
+  <button class="menu-toggle" id="menuToggle">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li id="closemenu" style="display: none;"><a href="#">Close</a></li>
+    
+  </ul>
+</div>
+
+<header class="main-header">
+  <div class="header-content">
+    <h1>EXPERIENCE THE RADIANCE</h1>
+    <p>Click below to receive a warm and cheerful greeting that will fill your day with<br>sunshine and positivity helping to brighten your mood.</p>
+    
+    <button id="openModal">Click Me</button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <h2>Good Morning</h2>
+        <p>Start your day with a smile and positive outlook.Embrace new oppurtunities and let today be great</p>
+          
+          <button class="modal-close-button">Close</button>
+         
+      </div>
+  </div>
+      
+         </div>
+   </div>
+
+  </div>
+  
+
+</header>
+
+<footer>
+  <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h2 class="footer-title">morning</h2>
+        </div>
+        <div class="footer-section">
+            <h4>USE CASES</h4>
+            <ul>
+                <li><a href="#">Freight procurement</a></li>
+                <li><a href="#">Shipment Tracking</a></li>
+                <li><a href="#">Route optimization</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>INDUSTRIES</h4>
+            <ul>
+                <li><a href="#">Manufacturing</a></li>
+                <li><a href="#">Courier</a></li>
+                <li><a href="#">Fright forwards</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>RESOURCES</h4>
+            <ul>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>COMPANY</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Leadership</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <ul>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Your privacy choices</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><img src="Icon Twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="Icon Facebook.svg" alt="Facebook"></a>
+            <a href="#"><img src="Icon Youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="Icon Linkedin.svg" alt=LinkedIn"></a>
+        </div>
+    </div>
+</footer>
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+  var navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+  this.classList.toggle('is-active');
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const menutoggle = document.getElementById('menutoggle');
+  const navlinks = document.getElementById('navlinks');
+  const closemenu = document.getElementById('closemenu'); // Get the close button
+
+  menutoggle.addEventListener('click', function() {
+    navlinks.classList.toggle('active');
+  });
+
+  // Event listener for the close button
+  closemenu.addEventListener('click', function() {
+    navlinks.classList.remove('active');
+  });
+});
+
+
+   // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById('openModal');
+
+// Get the button that closes the modal
+var closeBtn = document.querySelector('.modal-close-button'); // Changed to querySelector for accuracy
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on the close button, close the modal
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+
+    
+
+  </script>
+  
+  </body>
+  </html>
